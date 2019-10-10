@@ -1,2 +1,10 @@
 <h1>AVAILABLE BOATS</h1>
 <button [disabled]="clicked" (click)="handleClick()">See All Boats</button>
+
+<div *ngIf="clicked">
+    <div *ngFor="let boat of boats">
+        <h3>{{ boat.name }}</h3>
+        <img [src]="boat.img" width="200px">
+        <p>Built in {{ boat.year }}</p>
+    </div>
+</div>
